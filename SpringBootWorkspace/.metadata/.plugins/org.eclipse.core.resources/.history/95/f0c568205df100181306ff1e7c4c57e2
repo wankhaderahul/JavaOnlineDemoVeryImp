@@ -1,0 +1,14 @@
+package com.abstractfactory;
+
+public class AndroidClass {
+	
+	private final String OSNAME;
+
+	public AndroidClass() {
+		
+		OSNAME = "ANDROID";
+	}
+
+	
+
+}

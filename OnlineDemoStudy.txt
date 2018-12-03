@@ -1,0 +1,959 @@
+Constructor is member of methode A()
+Constructor same name of class name
+Constructor never return anyhing thats reason no any return type of constuctor
+every time create object you need constructor
+constructor is use to allocate memory 
+constructor is use to initialise veriable and provide the default value of veriable(Ex int i=0, float f=0.0)
+can not call constructor in same instance 
+multiple constructor in same class with different parameter it is call constuctor overloading (Ex:- A(), A(int i))
+
+
+
+
+
+------------------------------------------------------------------------
+
+Array-- > collection of similar type of elements --> Types 
+
+----------------------------------------------------------
+
+A constructor will have a access-control of type default when no access-modifier is defined explicitly. 
+So this constructor will have a Package Level Access. Classes which are defined within that package as that of the
+ class with this default constructor will be able to access it and also the classes that extend this class containing
+ the default constructor will be able to access it via inheritance
+ 
+ ------------------------------------------------------------------
+ 
+ Multi Threading
+ 
+ 1)Unit of process is called thread
+ 
+ 
+ Multi Taking
+ 
+ Perform different task at a time it is csall multitasking
+ ex:- same time mS type message and listen a music
+ 
+ Every java application bydefault one thread 'main' thread
+ ex:- exception
+ exception in thread 'main' java.lang.ArithmaticException divided by zero
+ 
+ 
+ -------------------------------------------------------------
+ Colletion & Generic
+ 
+ Collection :- group of object/elements
+ 
+ collection -->concept
+ Colection  -->Interface
+ Collections ->Class
+ 
+ 
+ Collection Interface --> List Interface --> ArrayList class
+ 
+ int a[]=new int[4] --> size fixed
+ 
+ Collection<Integer> value=new ArrayList<Integer>(); //<> Angular bracket
+            value.add(1);
+			value.add(2);
+			
+		bracket usees	
+	() --> function or methods
+	{} --> class,method
+	[] --> Array
+	<> --> Angular/diamond bracket for Genrics
+	
+	java 1.2 --> only colection   1.5--> Generics  1.7 -->  Colection <Integer> value= new ArrayList<>(); //no need to write integer in new Arraylist 
+	
+	
+	List<Integer> l=new ArrayList<>(); --> duplicate value --> order/sequence elements -->working on index every index unique element
+	    |                   |
+     interface	         Class
+  
+     Set<Integar> s=new HashSet<>();  -->unique value --> unordered/random element
+	              s=new TreeSet<>();  -->unique value --> Sorting elements
+				  
+   Map<Integer,String> m=new HashMap<>();   ->Synchronized (Threadsafe)		  
+	                   m=new HashTable<>();  ->Not Synchronized(not Threadsafe)
+					   
+			
+
+List I --> ArrayList C--> LinkedList C	
+
+Set I  -->HashSet C --> TreeSet C -->  SortedSet C		
+
+Map I --> HashMap C --> HashTable C --> TreeMap C --> SortedMap C
+					   
+ * @author  Josh Bloch
+ * @author  Neal Gafter
+ * @see     Set
+ * @see     List
+ * @see     Map
+ * @see     SortedSet
+ * @see     SortedMap
+ * @see     HashSet
+ * @see     TreeSet
+ * @see     ArrayList
+ * @see     LinkedList
+ * @see     Vector
+ * @see     Collections
+ * @see     Arrays
+ * @see     AbstractCollection
+ * @since 1.2
+ 
+ 
+ Colection is interface create object using arraylist, you can add the values using add method and fetch the value using Iterator
+ 
+ 
+ 
+ ------------------------------------------------------------------------------
+ 
+ Java.lang.package
+ 
+ 1)introduction
+ 2)Object class
+ 3)String Class
+ 4)String Buffer
+ 5)String Builder
+ 6)Wrapper class
+ 7)Autoboxing & AutoUnboxing
+ 
+ 
+ without java.lang.package impossible to write java programming
+ 
+ Q) whay can't import java.lang.package as sameas util,Io etc package
+ 
+ Ans:- Because it is explicitly imported in java.lang.package
+       Because all classes and interfaces is preset bydefault in java.lang.package
+	   
+	   
+	 -->  if use in predefiened  class or user defiened classes every call root class is object class
+	 -->every class/interface chield class of Object class Directly or indirectly
+	 
+	 Note: -
+	 1)if our class doesnt extend any other class then only ou class is the direct chield class of object --> class A{} --> A is chield of object
+	 2)if our class extends any other class then our class is indirect chield class of Object ----> class A extends B,Object -->  --> java doesn not support multiple inheritans with respective to class --> java support Multilevel Inheritancs
+	 3)
+	 
+	 
+	 Q) how many method in object class and which ?
+     Ans:- Total 11 Method of object class
+	 
+	    1)toString --> public Sting toString()
+		2)hashCode --> public native int hashCode()
+		3)equal    --> public boolean equal(Object o)
+		4)clone    --> protected native Object clone() throws CloneNotSupportedException
+		5)finalized -> protected void finalize() throws Throwable
+		6)getclass --> public final class getClass()
+		7)wait     --> public final void wait() throws IntereptedException
+		8)wait     --> public final native void  wait(long ms) throws InterptedException
+		9)wait     --> public final native void  wait(long ms,int ns) throws InterptedException
+		10)notify   --> public final void notify() throws InterptedException
+		11)notifyAll ->public final void notifyAll() throws InterptedException
+		
+		
+		---------------------------------------------------------------------------------------------
+		AI(Artificial Intiligience ) --> MAchinc learning  --> Deep Learning
+
+        Link:- Edx, Cousera and Udacity
+
+		----------------------------------------------------------------------------------
+		Java 8
+		
+		java 8 tree main feature
+		1)functional interface -->implementation/define of method 
+		   a)default method
+		   b)static method
+		   
+		2)functional progamming -->only focous on how
+		3)lambda expression  --> getting from sacla language -->scala is functional progamming language --> not need boiler programming focous only function
+	    3)Stream API  --> only focous what to do --> list.foreach.stream();
+		4)DateTime --> import java.time.LocalDate -->import java.time.LocalTime  -->ex:- LocalDate d=LocalDate.now() ,ZoneId.getAvailableZoneIds() 
+		5)Method Reference
+		 
+		   
+		
+		
+		Two techniquies of coading
+		1)Imperative  --> what to do how to do
+		2)declarative -->only focous what to do
+		
+		*) Default Method in introduction
+		
+		interface I{
+		
+		//default boolean equal(Object o)// CT error --> not supported because is object clas method
+		
+		}
+		
+		
+		
+		* Stream API  -->new concept of java ->lots of method support to this data --> use big data / Hadoop --> --> once use value stream can't reuse it --> use for process the data
+		
+		
+		some method of Stream API
+		
+		Intermidiat -->
+		  a)filter()
+		  b)map()
+		  
+		Treminate -->
+		  a)findFirst()
+		  b)forEach()
+		
+		list.Stream().forechc(i->syso(i));
+		list.parallelStream().forechc(i->syso(i));//Unorder -->Multithread use parallelStream() method
+		
+		
+		In Functional programmin passing a function a function in higher order
+		
+		
+		
+		-----------------------------------------------------------------------------------------------------
+		Spring MVC 
+		
+         Advantages
+		 1)easy to learning
+		 2)flexibility --> u change any services and contorooler any time
+		 3)sepration of concern -->different packges or modules
+		 4)multiaction controller --> servlet every controller act as single controller
+		 
+		 Maven is build tool --> build/compile application and different goal -->network ready application
+		 
+		 DI:- Injecting object in your application is called Dependancy Injection.
+		 
+		    a)BeanFactory --> use small appliaction
+			b)ApplicationContext -->Application context is super set of BeanFactory -->use big/enterprice/web appliaction
+			
+			
+			-----------------------------------------------------------------------------------------------------
+		
+			
+			Git hub Credential
+
+          User:- wankhaderahul
+
+         pwd:- rahulwankhade1991
+
+        docker hub credential
+
+      user:- rahulwankhade
+       pwd:-flip@2003
+
+      AWS Credential
+
+    user:- rahulwankhade92@gmail.com
+    pwd:-Rahul@1991
+			
+			
+				Git -->Distrubuted version control system -->Trunk based development
+				
+				Git command -->
+				
+				git clone <url>
+				git status 
+                
+                git add -A
+              git commit -m "msg" (commit to local) 
+			  
+			  git push origin development (push to cloud)
+             
+               
+              git branch -r (check branch)
+			  
+			  git pull --rebase origin development (update branch)
+			  
+			  git remote update
+git fetch 
+git checkout --track origin/<BRANCH-NAME>
+
+//if you checkout submbranch use command  --> in git master folder  -->  git checkout <subbranchname>
+
+
+//add folder from local machine using command 
+
+git init
+
+git remote add origin https://github.com/wankhaderahul/JavaOnlineDemoVeryImp.git
+
+git commit -m "first commit"
+
+git push -u origin master
+
+
+-------------------------------------------------------------------------------------------
+Hibernate --> Relational database
+
+object (java) -------> JDBC (connection tool)--> mapping your object to table      Hibernate (ORM tool-> i.e. ibatis,topLink etc)--> 
+database(Persiatance -->Mysql,Oracle,SqlServer,Postgre) --> Useing SessionFactory object (@Autowired SessionFactory sf;) --> Session  session=sf.getCurrentSession();
+Session(first level cache) --> SessionFactory (second level cache)
+
+Q )State obj of hibernate or persistance life cycle in hibernate ?
+Ans:- Transirnt (new) -->persistance (save(),persist())-->detached --> remove (remove()) 
+
+get()-->heat every time DB   -->actual object -->if object not found or null (NullponiterException)
+load()-> not heat every time DB -->proxcy object -->if object not found or null (ObjectNotFoundException)
+
+
+save() --> insert new entry DB   -->  Hibernate-proprietary -->guaranteed to assign and return an ID to Entity
+persist() -> insert new entry DB -->  JPA method --> not guaranteed to assign and return an ID for the entity
+merge() -->like update but here if a persistent object --> save your modifications at any time with out knowing about the state of an session
+update()--> update the already persistent object --> used to attach a detached entity to the session -->session does not contains an already persistent instance with the same identifier
+
+
+
+
+-----------------------------------------------------------------------------------------------------------
+Mysql 
+
+
+url _ https://stackoverflow.com/questions/2578194/what-is-ddl-and-dml
+
+create table student (rollno int, namess varchar (20));
+
+insert into student values(101,'rahul');
+
+update student set namess('Pankaj') where rollno=101;
+
+Alter table student add email varchar (255);
+
+alter table student DROP COLUMN email;
+
+desc student  -->display all row and coloum
+
+DDL -> data defination language  --> CREATE,ALTER,DROP,TRUNCATE,COMMENT(-- ,/* */),RENAME
+DML -> data manipulation language --> SELECT,INSERT,UPDATE,DELETE,MERGE(insert or update),CALL(call a PL/SQL),EXPLAIN PLAN,LOCK TABLE(concurrency Control)
+DRL/DQL -> data query language/Data retrive langualge -->
+DCL:- Data control language -->GRANT – allow users access privileges to database ,REVOKE – withdraw users access privileges given by using the GRANT command
+TCL:- Transaction control language --> COMMIT,ROLLBACK,SAVEPOINT,SET TRANSACTION
+
+by default set Autocommite=1 -->  set autocommit=0; use of autocommite the records
+
+rollback; -->rollback a transaction in case of any error occurs
+commit; -->save all transaction --> after commit not able to rollback the data
+
+delete from student where rollno >101 --> after delete use rollback; it will retrive data
+
+delete from student --> data it will be rollback;
+truncate student -->data not be rollback
+
+show databases;
+
+use jpademo;
+
+show tables;
+
+drop database jpademo;
+drop table student;
+
+Aggrigate function in SQL (uisng alias 'as')->count,max,min,avg,sum --> ex :- select count(*) as counts from student; or  select count(*) as 'counts rollno' from student;
+
+select count(*) from student;
+
+select count(*) as counts from student;
+
+select count(*) as 'counts rollno' from student;
+
+select count(distinct rollno) from student;
+
+select max(rollno) from student;
+
+select Min(rollno) as mim from student;
+
+select avg(rollno) as 'avarage rollno' from student;
+
+select sum(rollno) from student;
+
+-- gropu by ---- unique records
+
+employ and dept table BD name-> jpademo
+select * from employ
+
+select * from dept
+
+-- how many magers
+
+select count(*) from  employ where designation='manager';
+
+-- how many employ present as per designation
+
+select designation from employ group by designation
+
+select distinct designation from employ
+
+-- each dept how many employ are present 
+
+select deptno,count(*) as counts from employ group by deptno
+
+-- per department what is max salary 
+
+select deptno,max(sal) from employ group by deptno
+
+
+-- emp salary more than 10000
+
+select designation, count(*) from employ where sal >10000 group by designation;
+
+
+desc student
+
+create table student (rollno int,namess varchar(255),email varchar(255))
+
+select * from student order by rollno desc
+
+insert into student values(101,'rahul');
+
+insert into student values(104,'gaurao',null);
+
+update  student set namess='Sagar'  where rollno=101;
+
+delete from student where rollno >101
+
+delete from student
+
+truncate student; 
+
+set autocommit=1;
+
+commit;
+
+rollback;
+
+show databases
+
+use jpademo;
+
+show tables;
+
+drop database jpademo;
+drop table student;
+
+
+
+Alter table student add marks varchar (255);
+
+alter table student DROP COLUMN email;
+
+select count(*) from student;
+
+select count(*) as counts from student;
+
+select count(*) as 'counts rollno' from student;
+
+select count(distinct rollno) from student;
+
+select max(rollno) from student;
+
+select Min(rollno) as mim from student;
+
+select avg(rollno) as 'avarage rollno' from student;
+
+select sum(rollno) from student;
+
+
+
+create table employ (eno int, ename varchar (255), designation varchar (255),sal double ,mgr int);
+
+alter table employ  add deptno int;
+
+select * from employ
+
+
+create table dept (deptno int, dname varchar (255), location varchar (255));
+
+select * from dept
+
+insert into employ values -- (1,'aaa','salesman',7000,2,10),(2,'bbb','manager',17000,3,10),
+
+
+insert into employ values (1,'aaa','salesman',7000,2,10),(2,'bbb','manager',17000,3,10),(3,'ccc','president',40000,null ,30),(4,'ddd','cleark',5000,5,20),(5,'eee','manager',20000,3,20);
+
+
+insert into dept values  (10,'sales','mumbai'), (20,'hr','delhi'), (30,'account','chennai'), (40,'production','bangluru') ;
+
+
+
+select * from employ
+
+select * from dept
+
+-- how many magers
+
+select count(*) from  employ where designation='manager';
+
+-- how many employ present as per designation
+
+select designation from employ group by designation
+
+select distinct designation from employ
+
+-- each dept how many employ are present 
+
+select deptno,count(*) as counts from employ group by deptno
+
+-- per department what is max salary 
+
+select deptno,max(sal) from employ group by deptno
+
+
+-- emp salary more than 10000
+
+select designation, count(*) from employ where sal >10000 group by designation;
+
+-- which dept atleast 2 employ
+
+select deptno, count(*) from employ group by deptno having count(*)>1; -- after group by where condition not supported --> use for condition aggrigate function
+
+-- how many employ dept no 10
+
+select count(*) from employ where deptno=10
+
+select deptno from dept where location='mumbai';
+
+-- sub query
+
+select count(*) from employ where deptno in(select deptno from dept where location='mumbai');
+
+-- dept name work an aaa employ
+
+select dname from dept where deptno in(select deptno from employ where ename='aaa')
+
+
+-- avg salary of employ hr department
+
+select avg(sal) from employ where deptno in(select deptno from dept where dname='hr')
+
+
+select designation from employ  where deptno=20 group by designation;
+
+-- assending order of no of employ
+
+select designation,deptno from employ group by designation order by deptno asc
+
+select designation from employ where deptno in(select deptno from dept where location='delhi') group by designation having count(*)>2 order by designation asc
+
+-- highest salary
+
+select max(sal) from employ
+
+select ename from employ where sal=40000
+
+select ename from employ where sal=(select max(sal) from employ);
+
+select eno,ename from employ where designation='manager' and sal =(select max(sal) from employ where designation='manager');
+
+-- secound highest salary
+
+select sal from employ where sal=(select max(sal) from employ where sal <(select max(sal) from employ));
+
+-- location does employ aaa work
+
+select location from dept where deptno=(select deptno from employ where ename='aaa');
+
+
+-- list employ along with there location
+
+select e.eno,e.ename,d.location,d.deptno from employ e,dept d  where d.deptno=e.deptno
+
+-- list name,location highest salary employ
+
+select e.ename,d.location from employ e,dept d  where d.deptno=e.deptno and e.sal=(select max(sal) from employ )
+
+-- per job how many employ from mumbai
+
+select e.designation from employ e, dept d where e.deptno=d.deptno and d.location='mumbai' group by e.designation
+
+select eno,ename,sal,deptno from employ where sal>(select avg(sal) from employ where deptno=10) and deptno=10
+
+-- co-related subquery 
+
+select eno,ename,sal,deptno from employ E where sal>(select avg(sal) from employ where deptno=E.deptno) 
+
+
+
+
+-- Joins in Sql
+
+-- Inner join -- always return match record of both the table
+
+select e.ename,d.location from employ e,dept d where e.deptno=d.deptno
+
+select e.ename,d.location from employ e inner join dept d on e.deptno=d.deptno 
+
+-- outer join -- alway return match record and unmatch of both the table -->
+
+-- 3 Types of outer join --> left outer join,right outer join, full outer join -->
+
+-- left outer join --> return math and only umnatch record from left table
+
+-- right outer join --> return math and only umnatch record from right table
+
+-- full outer join --> return match and unmatch record of both the table
+
+select e.ename, d.dname from employ e left outer join dept d on e.deptno=d.deptno
+
+select e.ename, d.dname from employ e right outer join dept d on e.deptno=d.deptno
+
+select e.ename,d.dname from  employ e full outer join dept d on e.deptno=d.deptno
+
+-- self join --> join table itself -->ex:- employ table 
+
+select E.ename as employ_name,M.ename as manager_name from employ E ,employ M where E.eno=M.mgr  
+
+-- natural join 
+select e.ename ,d.dname  from employ e,dept d where e.deptno=d.deptno
+
+
+select ename,dname from employ natural join dept; -- automatically map PK and FK
+
+
+
+
+-- update clause 
+
+update employ set sal=sal+100;
+
+update employ set sal=sal+100 where eno=1
+
+update employ set sal=sal+100,ename='AAA' where eno=1
+
+
+update employ set sal=5000; -- bliend update
+
+update employ set ename='eee' where eno=5
+
+-- delete
+
+delete from employ 
+
+rollback;
+
+select * from employ 
+
+
+-- create table 
+create table test_create_ddl_table (id int, name varchar(255),locatio varchar (255))
+
+desc test_create_ddl_table
+
+/* data type in Oracle
+1)scaller  --> mostly used (hold single value)
+2)composite --> PL/SQL 
+3)Reference --> PL/SQL
+4)user defined data type --> PL/SQL
+
+
+1) scaller data type in oracle
+  
+    a)numeric datatypes --> 
+         number(p),
+         int,
+         Integer,
+         decimal(p,q),
+         float,double
+    
+    b)character datatypes -> 
+       char(n) - fixed length ex:- char(6) 'abc' 'abc   '  ,
+       nchar(n),varchar2(n) ,
+       nvarchar2(n) multiple language support
+
+    c) date datatypes --> date,timestamp,interval
+   
+    d)LOB datatypes (Large Object) ->
+       blob - binary large file (img file,song file,document file,microsoft word,excel etc),
+       clob - charter large file (text base info .txt file etc), 
+       nclob -multiple language support , 
+       bfile (store the reference of file) ,
+
+
+ */
+
+ 
+ -------------------------------------------------------------------------------------
+ Very IMP 
+ 
+ Design pattern in java (23 types)
+ 
+ Four Principle of design pattern 
+ 
+ 1. Composition Over Inheritancs
+ 2. Interface
+ 
+ Types -->Creationl ,Structural and Behaviour 
+ 
+ CREATIONAL (Ex:- how to create object then u will follow creational design pattern) --> how to create obj
+ 
+ 1. Singletone --> create only one instance --> i.e. static obj , private constructor, static method to call static obj
+ 2. Factory --> define interface for create obj but subclasses decide which class to instantiate.  --> Operating sysytem --> I OS ,C Android, C IOS, C Microsoft
+ 3. Abstract Factory -->Define interface for creating object without class.
+ 4. Builder  --> create object of required parameters --> ex .C Pen , C PenBuilder 
+ 5. Prototype(clone of object) --> i.e. -> if u load obj using DB incrase the performane thats reason prototype use for clone obj
+ 
+ STRUCTURAL (Ex:- how compose two object then u will follow Structural design pattern) --> Structure of obj
+ 
+ 6. Adapter --> allows interface existing class to be used as another interface -->helps two incompatible interfaces to work together --> ex I Pen, C AssinmentWork,C PilotPen ,C Adapter 
+ 7. composite --> use obj structure of tree --> i.e. computer -> Computer -> 1. cabinet (HD,MB (cpu,ram)(leaf)) 2.periferal (mouse,monitor) if u perform some opertion on leaf node this operation always perform on composite node
+ 8. Proxy
+ 9. Fly weight
+10. Facaed
+11. Bridge
+12. Decorator
+ 
+ BEHAVIOUR (Ex:- when u don't want compose two object want to communicate this object then u will follow Behaviour design pattern) --> Behaviour or u r application
+ 
+ 13. Template Method
+ 14. Mediator
+ 15. Chain of Responsibility
+ 16. Observer
+ 17. Strategy 
+ 18. Command 
+ 19. State
+ 20. Visitor
+ 21. Iterator
+ 22. Interpretor
+ 23. Memento
+ 
+ 
+ ------------------------------------------------------------------------------
+ 
+ DATA STRUCTURE IN JAVA --> https://app.pluralsight.com/library/search?q=angular%204
+ 
+ Data Structure In java --> Is all about how can structure u r data and how to store u r data and using initiantly.
+ i.e. Big data -->Frame Work -> Hadoop, Spark to process the data all in data structure.
+ 
+ Abstract Data Type --> List, Stack, Queue, Map ,Tree
+ 
+Data type --> First type of data and then associate with data
+
+List --> Collection of Object --> Array List, Linked List(Collection of elememt-every element linked each other)
+
+Queue -->FIFO Manner --> ex:- movie tickets --> enqueue(add element), dqueue(delete element)
+
+Stack --> LIFO i.e --> Plate put one into one-->Features :- Push(add element) POP(delete element), PEAK(find the element) --> one entry point
+
+Map -->Key Value paier --> Using Hashing Function unique number
+
+
+Tree --> roof node,edge , leaf node
+
+--------------------------------------------------------------------------------------------
+
+Difference between web server and application server .
+
+Web Server :- IIS : ASP (.NET) ,Tomcat : Servlet ,Jetty : Servlet ,Apache : Php, CGI 
+
+1. While a web server handles mainly HTTP protocols,
+2. The Web server's main job is to display the site content
+
+Application server :- MTS : COM+ , WAS : EJB ,JBoss : EJB , WebLogic Application Server : EJB
+
+1. Application Server is a term that sometimes is mixed with a web server.  
+2. the application server deals with several different protocols(RMI,RPC), including, but not limited, to HTTP.
+3. application server is in charge of the logic, the interaction between the user and the displayed content. 
+
+ 
+
+--------------------------------------------------------------------------------
+aggregation and composition in java 
+
+Composition -> Strong Has-A relationship 
+Aggregation -> Weak Has-A relationship.
+ 
+ 
+ -----------------------------------------------------------------------------------
+ 
+ DOCKER 
+ 
+ docker
+
+docker ps
+
+docker pull sureshchouksey/spring-docker
+
+$ docker ps -a
+
+
+docker images
+
+docker run --name demo -d sureshchouksey/spring-docker
+
+
+$ docker stop demo
+
+
+$ docker rm demo
+
+
+$ docker run --name demo -p 9000:8080 -d sureshchouksey/spring-docker
+
+
+ docker run --name dockermongo -p 27017:27017 -d mongo
+
+
+ 
+ bcdedit /set hypervisorlaunchtype auto
+ 
+ 
+ 
+ docker pull <image-name:tag>
+ 
+ docker run <image-name:tag> or docker run <image-id>
+ 
+ docker images
+ 
+ 
+ docker ps 
+ 
+ docker ps -a
+ 
+ 
+ docker build -t edureka:1.0
+ 
+ 
+ docker run --name "ubuntutomcat7" -p 8080:8080 edureka:1.0
+ 
+ ADD java repo
+ 
+ Insatll java
+ 
+ Install Tomcat
+ 
+ Expose Tomcat
+ 
+ Expose 8080
+ 
+ docker start <container-name>
+ docker stop <container-name>
+ 
+ docker rm <container-name>
+ 
+ docker rmi <image id>
+
+ docker rmi <repo:tag> 
+ 
+ ---------------------------------------------------------
+ 
+ docker login
+ 
+ username :- rahulwankhade 
+ pwd:- flip@2003
+ 
+ 
+ 
+  docker build -t spring-boot-chat-demo1 .
+  
+  docker tag 0cb6a1b30f4a rahulwankhade/spring-boot-chat-demo1
+  
+   docker push rahulwankhade/spring-boot-chat-demo1
+
+   
+   docker pull rahulwankhade/spring-boot-chat-demo1
+   
+   
+   
+   docker run --name mysbcbs -p 7090:8080 -d rahulwankhade/spring-boot-chat-demo1
+   
+   
+   java -jar MyFirstSBApp-0.0.1-SNAPSHOT.jar
+   
+   -------------------------------------------------------
+   Spring boot mvn command run project
+   
+   mvn dependency:tree
+   
+   mvn spring-boot:run
+   
+   mvn clean package
+   
+   project/target$ java -jar spring-boot-web-jsp-1.0.war
+   
+   docker push rahulwankhade/spring-boot-web-jsp
+   
+   docker pull rahulwankhade/spring-boot-web-jsp
+   
+   
+   --------------------------------------------------------------
+   
+   
+   https://www.youtube.com/watch?v=tJ6OCqDl62w
+   
+   
+   
+   
+   
+   
+   ------------------------------------------------------------------------------------------------------------------------------
+   
+   AWS 
+   
+   
+   
+   https://linuxize.com/post/install-java-on-centos-7/
+
+http://rahuldemoapp.azzj6cdjsd.us-east-1.elasticbeanstalk.com/
+
+https://www.tecmint.com/install-apache-tomcat-in-centos/
+
+https://www.cyberciti.biz/faq/yum-install-wget-redhat-cetos-rhel-7/
+
+
+
+Linux  --> Ubhuntu --> apt get command use  --> i.e. apt get update , apt get install java1.8
+           Red Hat,Centos --> yum  command use
+
+ec2-user@34.239.121.57
+data-->ec2-user
+
+sudo yum update -y
+
+///sudo yum install -y httpd24 php56 php56-mysqlnd
+
+sudo yum install -y httpd
+
+service httpd start
+
+
+need jar for aws code start
+HibernateCore   5.2.9.Final
+Spring ORM      4.2.6.RELEASE
+MysqlConnector  5.1.39
+c3p0            0.9.5.2
+Spring Tx       4.2.6.RELEASE
+
+Hibernate Configuration
+SessionFactory -->Hibernate properties -->datasource
+Transactional
+
+
+@Repository
+class AlienDAO
+
+@Autowired
+SessionFactory sf;
+
+Session session=sf.getCurrentSession();
+
+
+
+
+    Access Key ID:
+    AKIAISEMGH76VES5VUQQ
+    Secret Access Key:
+    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
+
+
+	
+db instance-:	youtube.cvicztclv6un.us-east-1.rds.amazonaws.com
+user:- root
+pwd:- rahul1991
+
+v6un.us-east-1.rds.amazonaws.com
+
+
+
+
+DB URL:-youtube.cvicztclv6un.us-east-1.rds.amazonaws.com
+
+ 
+ 
+ 

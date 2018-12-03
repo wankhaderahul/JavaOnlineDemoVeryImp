@@ -1,0 +1,11 @@
+package com.adapt;
+
+public class PenAdapter  implements Pen{
+
+	@Override
+	public void write(String str) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

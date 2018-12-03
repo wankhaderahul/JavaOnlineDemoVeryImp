@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:context = "http://www.springframework.org/schema/context"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans     
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context 
+   http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+   
+  
+  <!--  1 ts way to configure u r bean with bean tag xml configuration -->
+  
+<!-- <bean id="vehical" class="com.rahul.SpringFrameWrokDemo.Car"></bean>
+<bean id="vehical" class="com.rahul.SpringFrameWrokDemo.Bike"></bean> -->
+
+<!--  2 nd way to configure u r bean with @ annotation configuration use @Component Annotation -->
+
+<context:component-scan base-package="com.rahul.SpringFrameWrokDemo"></context:component-scan>
+
+<!--  3 rd way to configure u r bean with bean tag xml configuration with parameter -->
+
+<!-- <bean id="tyre" class="com.rahul.SpringFrameWrokDemo.Tyre">
+<property name="brand" value="MRF"></property>
+<constructor-arg value="CEAT"></constructor-arg>
+</bean> -->
+
+<bean id="car" class="com.rahul.SpringFrameWrokDemo.Car"></bean> 
+
+</beans>

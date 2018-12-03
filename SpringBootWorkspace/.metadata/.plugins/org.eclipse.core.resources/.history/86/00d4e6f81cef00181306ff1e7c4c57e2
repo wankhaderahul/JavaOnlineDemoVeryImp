@@ -1,0 +1,35 @@
+package com.composite;
+
+
+interface Component{
+	
+	void showPrice();
+}
+
+
+class Leaf implements Component {
+	
+	String name;
+	int price;
+	public Leaf(String name, int price) {
+		super();
+		this.name = name;
+		this.price = price;
+	}
+	@Override
+	public void showPrice() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+}
+
+class Composite {
+	
+	String name;
+}
+
+public class ComputerPart {
+
+}

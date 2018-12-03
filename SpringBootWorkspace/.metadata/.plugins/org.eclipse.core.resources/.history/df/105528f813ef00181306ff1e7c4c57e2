@@ -1,0 +1,12 @@
+package com.adapt;
+
+public class AdapterMain {
+
+	public static void main(String[] args) {
+		
+		AssigmentWork aw=new AssigmentWork();
+		aw.setPen(pen);
+
+	}
+
+}

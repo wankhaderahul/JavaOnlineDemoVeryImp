@@ -1,0 +1,17 @@
+package com.composite;
+//obj structure of tree
+interface Copmonent{
+	void showPrice();
+}
+
+class Leaf {
+	
+	String name;
+	int price;
+}
+
+public class ComputerPart {
+	
+	
+
+}

@@ -1,0 +1,17 @@
+package com.composite;
+
+
+
+public class CompositeMain {
+
+	public static void main(String[] args) {
+
+
+		Component hd=new Leaf("HardDrive", 5000);
+		Component hd=new Leaf("HardDrive", 5000);
+		Component hd=new Leaf("HardDrive", 5000);
+		Component hd=new Leaf("HardDrive", 5000);
+
+	}
+
+}

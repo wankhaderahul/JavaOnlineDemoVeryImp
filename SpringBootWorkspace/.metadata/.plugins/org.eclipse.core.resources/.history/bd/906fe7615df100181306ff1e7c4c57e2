@@ -1,0 +1,13 @@
+package com.abstractfactory;
+
+public class IOSClass implements OperatingSystemInterface {
+
+	private final String OSNAME;
+	
+	@Override
+	public String getOSName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

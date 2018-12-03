@@ -1,0 +1,117 @@
+docker
+
+docker ps
+
+docker pull sureshchouksey/spring-docker
+
+$ docker ps -a
+
+
+docker images
+
+docker run --name demo -d sureshchouksey/spring-docker
+
+
+$ docker stop demo
+
+
+$ docker rm demo
+
+
+$ docker run --name demo -p 9000:8080 -d sureshchouksey/spring-docker
+
+
+ docker run --name dockermongo -p 27017:27017 -d mongo
+
+
+ 
+ bcdedit /set hypervisorlaunchtype auto
+ 
+ 
+ 
+ docker pull <image-name:tag>
+ 
+ docker run <image-name:tag> or docker run <image-id>
+ 
+ docker images
+ 
+ 
+ docker ps 
+ 
+ docker ps -a
+ 
+ 
+ docker build -t edureka:1.0
+ 
+ 
+ docker run --name "ubuntutomcat7" -p 8080:8080 edureka:1.0
+ 
+ ADD java repo
+ 
+ Insatll java
+ 
+ Install Tomcat
+ 
+ Expose Tomcat
+ 
+ Expose 8080
+ 
+ docker start <container-name>
+ docker stop <container-name>
+ 
+ docker rm <container-name>
+ 
+ docker rmi <image id>
+
+ docker rmi <repo:tag> 
+ 
+ ---------------------------------------------------------
+ 
+ docker login
+ 
+ username :- rahulwankhade 
+ pwd:- flip@2003
+ 
+ 
+ 
+  docker build -t spring-boot-chat-demo1 .
+  
+  docker tag 0cb6a1b30f4a rahulwankhade/spring-boot-chat-demo1
+  
+   docker push rahulwankhade/spring-boot-chat-demo1
+
+   
+   docker pull rahulwankhade/spring-boot-chat-demo1
+   
+   
+   
+   docker run --name mysbcb -p 7080:8080 -d rahulwankhade/spring-boot-chat-demo1
+   
+   
+   java -jar MyFirstSBApp-0.0.1-SNAPSHOT.jar
+   
+   -------------------------------------------------------
+   Spring boot mvn command run project
+   
+   mvn dependency:tree
+   
+   mvn spring-boot:run
+   
+   mvn clean package
+   
+   project/target$ java -jar spring-boot-web-jsp-1.0.war
+   
+   docker push rahulwankhade/spring-boot-web-jsp
+   
+   docker pull rahulwankhade/spring-boot-web-jsp
+   
+   docker-compose up -d --> use for run docker yml files
+   
+   
+   --------------------------------------------------------------
+   https://www.youtube.com/watch?v=tJ6OCqDl62w
+   
+   https://dev.mysql.com/doc/mysql-installation-excerpt/5.5/en/docker-mysql-getting-started.html
+   
+   
+   http://www.dev-garden.org/2014/12/27/setting-up-a-docker-container-with-centos6-and-tomcat7/

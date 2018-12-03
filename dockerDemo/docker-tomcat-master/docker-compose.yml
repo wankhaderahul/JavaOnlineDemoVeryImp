@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  tomcat:
+    image: 'sureshchouksey/centostomcat'
+    labels:
+      kompose.service.type: nodeport
+    ports:
+      - '8080:8080'
+    volumes:
+      - /path/to/tomcat-persistence:/bitnami
+    environment:
+      - TOMCAT_USERNAME=admin
+      - TOMCAT_PASSWORD=admin
+
+volumes:
+  tomcat_data:
+    driver: local

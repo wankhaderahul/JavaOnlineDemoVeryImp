@@ -1,0 +1,11 @@
+package com.factory;
+
+public class AndroidClass implements OSInterface{
+
+	@Override
+	public void spec() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

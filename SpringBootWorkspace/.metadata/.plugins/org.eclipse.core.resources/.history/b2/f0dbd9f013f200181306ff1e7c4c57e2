@@ -1,0 +1,14 @@
+package com.stack;
+
+public class Runner {
+	
+	public static void main(String[] args) {
+		Stack s=new Stack();
+		s.push(15);
+		s.push(8);
+		s.push(9);
+		System.out.println(s);
+		
+	}
+
+}

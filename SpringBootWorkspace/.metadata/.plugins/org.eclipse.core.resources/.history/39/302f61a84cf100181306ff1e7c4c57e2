@@ -1,0 +1,12 @@
+package com.abstractfactory;
+
+
+/* Abstract Factory --> Super factory --> factory of factory
+ * 
+ * 
+ * 
+ * 
+ * */
+public class AbstractFactory {
+
+}

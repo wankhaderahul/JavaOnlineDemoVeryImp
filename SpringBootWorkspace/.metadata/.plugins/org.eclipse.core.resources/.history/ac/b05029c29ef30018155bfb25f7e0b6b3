@@ -1,0 +1,54 @@
+package com.stack;
+
+public class DynamicStackorArray {
+	
+	int capacity=2;
+	
+	int stack[]=new int [5];
+	int top=0;
+	
+	public void push(int data) {
+		
+		if(size()==capacity)
+			eapand();
+		
+		stack[top]=data;
+		top++;
+		
+	}
+	
+	private void eapand() {
+		int length=size();
+		int newStack []=new int[capacity*2];
+		System.arraycopy(stack, 0, newStack, 0, length);
+		stack=newStack;
+		capacity*=2;
+		
+	}
+
+	public void peak() {
+		
+		for(int n:stack) {
+			System.out.println(" dynamic stack : "+n);
+		}
+	}
+	
+	public int pop() {
+		int data;
+		top--;
+		data=stack[top];
+		stack[top]=0;
+		return data;
+	}
+	
+	public int size() {
+		return top;
+		
+	}
+	
+	public boolean isEmpty() {
+		return top<=0;
+		
+	}
+
+}

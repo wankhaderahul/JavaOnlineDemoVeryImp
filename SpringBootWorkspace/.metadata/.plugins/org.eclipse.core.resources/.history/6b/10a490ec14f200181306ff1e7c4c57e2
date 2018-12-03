@@ -1,0 +1,30 @@
+package com.stack;
+
+public class Stack {
+	
+	int stack[]=new int[5];
+	int top=0;
+	public void push(int data) {
+	
+	stack[top]=data;
+	top++;
+	//System.out.println(top);
+	}
+	
+	public void peak() {
+		
+		for(int n:stack) {
+			System.out.println(n +" ");
+		}
+	}
+	
+	public int pop() {
+		
+		int data;
+		data=stack[top];
+		stack[top]=0;
+		return data;
+		
+	}
+
+}

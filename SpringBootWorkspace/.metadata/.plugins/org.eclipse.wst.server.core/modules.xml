@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<modules>
+  <module moduleId="org.eclipse.jst.j2ee.server:DemoSpringMVC" serverId="Pivotal tc Server Developer Edition v4.0"/>
+  <module moduleId="org.eclipse.jst.jee.server:demorest" serverId="Pivotal tc Server Developer Edition v4.0"/>
+  <module moduleId="org.eclipse.jst.j2ee.server:SpringMvcGitaram" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.j2ee.server:SpringMVCDemo" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.j2ee.server:SpringMVCGitaramDemo" serverId="Tomcat v8.5 Server at localhost"/>
+</modules>

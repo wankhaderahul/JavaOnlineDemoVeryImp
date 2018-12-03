@@ -1,0 +1,93 @@
+/* Exception:- core advantage of exception handling is to maintain the normal flow of the application.
+use:-
+try --> create resource
+catch-->handle resource
+finally --> close resource
+
+
+unchecked exception --> compiler don't force to handle this exception occurs at Runtime this is called unchecked exception 
+--> ex:-NullPointerException, ArithmaticException,ArrayIndexOutofBoundException,ClassCastException
+
+checked exception --> compiler force to handle this exception occurs at compile time is is called checked exception 
+-->ex:-IOException, NumberFormatException,SQLException 
+
+Error-->Error is irrecoverable e.g. OutOfMemoryError, VirtualMachineError, AssertionError etc.
+
+*/import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class C4_ExceptionDemo_22 {
+
+	public static void main(String[] args) throws Exception {
+		
+		/*try {
+		int i=7;
+		//i=i/4;
+		
+		System.out.println(" out put is :"+i);
+		
+		int a[]=new int[6];
+		
+		//a[7]=8;
+		
+		int b[]=null;
+		b[4]=8;
+		
+		}
+		
+		//java 1.7 and above
+		catch(ArithmeticException | ArrayIndexOutOfBoundsException  e) {
+			//e.printStackTrace();//error print
+			System.out.println("can not devide by zero ");
+		}
+		
+		catch(ArithmeticException   e) {
+			//e.printStackTrace();//error print
+			System.out.println("can not devide by zero ");
+		}
+		catch(ArrayIndexOutOfBoundsException  e) {
+			//e.printStackTrace();//error print
+			System.out.println("out of limit ");
+		}
+		catch(Exception  e) {
+			//e.printStackTrace();//error print
+			System.out.println("something wrong ... ");
+		}
+		
+		
+		finally {
+			System.out.println(" finally alwayes execute");
+		}*/
+		
+	// new example
+		
+		int n=0;
+		
+		System.out.println("Enter a number");
+		
+				
+		//BufferedReader br = null;
+		/*try { //create resources in try block
+		
+		
+			
+		br=new BufferedReader(new InputStreamReader(System.in));
+		n=Integer.parseInt(br.readLine());//45
+		}
+		catch(Exception e){ //handle resources in catch block
+			System.out.println(e);
+		}
+		finally { //close resources in finally block
+			br.close();
+		}*/
+		
+		//1.7 try with resource not need to closed resource it will automatically close resources
+	
+		try(BufferedReader br1=new BufferedReader(new InputStreamReader(System.in))){
+			n=Integer.parseInt(br1.readLine());//45
+			System.out.println(n);
+		}
+	}
+
+}

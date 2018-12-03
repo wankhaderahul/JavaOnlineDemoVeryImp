@@ -1,0 +1,11 @@
+package com.composite;
+//obj structure of tree
+interface Copmonent{
+	void showPrice();
+}
+
+public class ComputerPart {
+	
+	
+
+}

@@ -1,0 +1,11 @@
+package com.builder;
+
+public class PhoneBuilder {
+	
+	private String os;
+	private int ram;
+	private String processor;
+	private double screeSize;
+	private int battery;
+
+}

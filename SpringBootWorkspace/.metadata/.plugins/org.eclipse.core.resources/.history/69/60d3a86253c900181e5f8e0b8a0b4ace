@@ -1,0 +1,17 @@
+
+public class C4_ExceptionDemo_22 {
+
+	public static void main(String[] args) {
+		
+		try {
+		int i=7;
+		i=i/0;
+		}
+		
+		catch(Exception e) {
+			
+			System.out.println("Error "+e.printStackTrace());
+		}
+	}
+
+}

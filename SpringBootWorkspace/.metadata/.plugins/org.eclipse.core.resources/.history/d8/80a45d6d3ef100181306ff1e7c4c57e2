@@ -1,0 +1,40 @@
+package com.singleton;
+
+class ABC{
+	
+	static ABC obj=new ABC(); //static obj/instance of this class
+	
+	private ABC() { //constructor private
+		
+	}
+	
+public static ABC getInstance() { // static method with return type of class call static obj
+		
+	System.out.println(" I am singlrTon");
+		return obj; //static method allow only static veriable
+	}
+}
+
+
+class A{
+	
+	static A a=new A(); //static obj 
+	private A() {
+		
+	}
+	
+}
+
+public class SingletonMain {
+
+	public static void main(String[] args) {
+		ABC obj1=ABC.getInstance();
+		ABC obj2=ABC.getInstance();
+		
+	}
+	
+	
+	
+	
+	
+}

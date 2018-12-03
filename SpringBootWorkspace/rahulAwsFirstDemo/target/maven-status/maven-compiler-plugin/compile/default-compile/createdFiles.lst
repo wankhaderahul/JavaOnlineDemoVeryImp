@@ -1,0 +1,6 @@
+com\aws\codestar\projecttemplates\model\Alien.class
+com\aws\codestar\projecttemplates\dao\AlienDao.class
+com\aws\codestar\projecttemplates\configuration\MvcConfig.class
+com\aws\codestar\projecttemplates\controller\HelloWorldController.class
+com\aws\codestar\projecttemplates\HelloWorldAppInitializer.class
+com\aws\codestar\projecttemplates\configuration\ApplicationConfig.class

@@ -1,0 +1,73 @@
+
+/*
+ * 
+ Composition -> Strong Has-A relationship 
+ Aggregation -> Weak Has-A relationship.
+
+*/
+ 
+class EngineSpecs{
+	
+	
+	
+}
+
+class Engine {
+	
+	public Engine(EngineSpecs specs) {
+		
+	}
+	
+	public void work() {
+		System.out.println(" Engine Work");
+	}
+}
+
+
+//Composition -> Strong Has-A relationship 
+
+//Engine is completely encapsulated by the Car.
+
+//Car no way for the outside world to get a reference to the Engine
+
+final class Car {
+
+	  private final Engine engine;
+
+	  Car(EngineSpecs specs) {
+	    engine = new Engine(specs);
+	  }
+
+	  void move() {
+	    engine.work();
+	  }
+	}
+
+
+//Aggregation -> Weak Has-A relationship.
+final class Cars {
+
+	  private Engine engine;
+
+	  void setEngine(Engine engine) {
+	    this.engine = engine;
+	  }
+
+	  void move() {
+	    if (engine != null)
+	      engine.work();
+	  }
+	}
+
+public class E5_AggrigationAndCompositionDemo_41 {
+	public static void main(String[] args) {
+		EngineSpecs specs=new EngineSpecs();
+		Car c=new Car(specs);
+		c.move();
+		
+		Cars cs=new Cars();
+		c.move();
+	}
+	
+
+}

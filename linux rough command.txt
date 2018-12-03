@@ -1,0 +1,77 @@
+mysqldump -u icfdis_user -picfdis_user@nov242014 iahp_prod --routines  > iahp_prod_July-24-2018.sql
+
+
+mv catalina.out  catalina_BackupLog_July-24-2018_#495.out
+
+
+ ./shutdown.sh
+ 
+ 
+ rm -f icfdis-db.war
+ 
+ rm -rf icfdis-db
+ 
+ 
+ ./startup.sh
+ 
+ 
+ cp /home/bderr/24-July-2018_#495/icfdis-db.war  /opt/apache-tomcat6.0.2/webapps/
+ 
+ cp /home/bderr/24-July-2018_#495/icfdis-db.war  .
+ 
+ 
+ source /home/bderr/24-July-2018_#495/#495_Victory_Report_Updated_ Query/#495_individual_victory_report_updated_query.sql
+ 
+ source /home/bderr/24-July-2018_#495/#495_Victory_Report_Updated_ Query/#495_victory_eligibility_report_updated_query.sql
+ 
+ source /home/bderr/24-July-2018_#495/#495_Victory_Report_Updated_ Query/#495_detoxification_victory_report__updated_query.sql
+ 
+ source /home/bderr/24-July-2018_#495/#495_Victory_Report_Updated_ Query/#495_healt_victory_report_updated_query.sql
+ 
+ 
+ 
+ select * from ic_tm_rep_flt_qry where flt_id in (49);
+ 
+ 
+ 
+ 
+ source /home/bderr/24-July-2018_#495/backup/#495_Victory_Report_Existing_ Query/#495_individual_victory_report_existing_query.sql
+ 
+ source /home/bderr/24-July-2018_#495/backup/#495_Victory_Report_Existing_ Query/#495_victory_eligibility_report_existing_query.sql
+ 
+ source /home/bderr/24-July-2018_#495/backup/#495_Victory_Report_Existing_ Query/#495_detoxification_victory_report__existing_query.sql
+ 
+ source /home/bderr/24-July-2018_#495/backup/#495_Victory_Report_Existing_ Query/#495_healt_victory_report_existing_query.sql
+ 
+ 
+ 
+ 
+ 121
+ 
+ rm -rf ehcache_auto_created_1533276394572
+ 
+ rm -rf ehcache_auto_created_1533276394360
+ 
+ rm -rf ehcache_auto_created_1533191124472
+ 
+ rm -rf ehcache_auto_created_1533191124267
+ 
+
+ 
+ 
+ 
+ 
+ 122
+ 
+ rm -rf ehcache_auto_created_1533276411034
+ 
+ rm -rf ehcache_auto_created_1533276410717
+ 
+ 
+ rm -rf ehcache_auto_created_1533191138443
+ 
+ rm -rf ehcache_auto_created_1533191138008
+ 
+ 
+ 
+ 

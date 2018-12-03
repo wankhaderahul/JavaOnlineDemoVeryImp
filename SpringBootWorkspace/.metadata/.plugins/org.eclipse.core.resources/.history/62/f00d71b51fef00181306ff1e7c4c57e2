@@ -1,0 +1,15 @@
+package com.composite;
+
+public class CompositeMain {
+
+	public static void main(String[] args) {
+
+    Component hd=new Leaf("HardDrive", 7000);
+    Component mouse=new Leaf("Mouse", 500);
+    Component monitor=new Leaf("Monitor", 9000);
+    Component hd=new Leaf("HardDrive", 3000);
+    Component hd=new Leaf("HardDrive", 3000);
+
+	}
+
+}

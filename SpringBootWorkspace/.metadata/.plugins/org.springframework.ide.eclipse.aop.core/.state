@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="demoDIAutowired"/>
+<aop-project name="bootjpa"/>
+<aop-project name="websocket-demo"/>
+<aop-project name="SpringBootJPA"/>
+<aop-project name="springbootrest"/>
+<aop-project name="Spring-Demo"/>
+<aop-project name="rahulawsfirstde"/>
+</aop-reference-model>

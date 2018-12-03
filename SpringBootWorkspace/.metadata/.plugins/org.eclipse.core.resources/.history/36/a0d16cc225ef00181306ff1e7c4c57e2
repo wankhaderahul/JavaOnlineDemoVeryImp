@@ -1,0 +1,12 @@
+package com.prototype;
+
+public class PrototypeMain {
+
+	public static void main(String[] args) {
+		BookShop bs=new BookShop();
+		bs.setShopName("Novelty");
+		bs.loadDataDBEx();
+
+	}
+
+}

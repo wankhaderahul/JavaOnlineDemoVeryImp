@@ -1,0 +1,84 @@
+package com.singleton;
+
+//using Simple Singleton 
+
+class ABC{
+	
+	static ABC obj=new ABC(); //static obj/instance of this class
+	
+	private ABC() { //constructor private
+		System.out.println("Private constructor");
+	}
+	
+public static ABC getInstance() { // static method with return type of class call static obj
+		
+	System.out.println(" I am singleTon");
+		return obj; //static method allow only static veriable
+	}
+}
+
+
+//Using synchronized Thread
+
+class A{
+	
+	static A obj=new A();
+	private A() {
+		System.out.println(" instance created");
+	}
+	
+	public static synchronized A getInsatnce() {  //to use synchronized reduce the performance --> Double Check Locking to use improve the performance 
+		
+		if(obj==null) {
+			obj= new A();
+		}
+		return obj;
+	}
+	
+	
+}
+
+
+public class SingletonMain {
+
+	public static void main(String[] args) {
+	/* Single instance constructor call only one time*/
+		
+		
+		//using Simple Singleton 
+		
+		/*ABC obj1=ABC.getInstance(); //constructor call only ones -->create single instance
+		ABC obj2=ABC.getInstance();*/
+		
+		
+		//Using synchronized Thread
+		
+		Thread t1=new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				A obj=A.getInsatnce();
+				
+			}
+		});
+		
+Thread t2=new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				A obj1=A.getInsatnce();
+				
+			}
+		});
+
+t1.start();
+t2.start();
+
+
+	}
+	
+	
+	
+	
+	
+}

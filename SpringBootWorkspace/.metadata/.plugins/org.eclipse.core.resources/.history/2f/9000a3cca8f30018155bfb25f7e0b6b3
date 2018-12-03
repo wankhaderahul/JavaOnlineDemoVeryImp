@@ -1,0 +1,11 @@
+package com.queue;
+
+public class Queue {
+	
+	int queue[]=new int[5];
+	int size;
+	int size;
+	int size;
+	
+
+}

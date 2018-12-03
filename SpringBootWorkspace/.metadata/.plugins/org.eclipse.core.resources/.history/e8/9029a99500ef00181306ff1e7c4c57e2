@@ -1,0 +1,15 @@
+package mobilephone;
+
+public class FactoryMain {
+	
+	public static void main(String[] args) {
+		
+		/*OSInterface obj= new AndroidClass();
+		obj.spec();*/
+		
+		OperatingSystemFactory osf=new OperatingSystemFactory();
+		OSInterface os=osf.getInstance("Android");
+		os.spec();
+	}
+
+}

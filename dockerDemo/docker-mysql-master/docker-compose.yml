@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  mysql:
+    image: 'sureshchouksey/docker-mysql'
+    labels:
+      kompose.service.type: nodeport
+    ports:
+      - '3306:3306'
+    volumes:
+    - ./docker/data:/docker-entrypoint-initdb.d
+    environment:
+        MYSQL_ROOT_PASSWORD: 1234

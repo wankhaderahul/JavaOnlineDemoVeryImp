@@ -1,0 +1,53 @@
+
+public class C4_ExceptionDemo_22 {
+
+	public static void main(String[] args) {
+		
+		try {
+		int i=7;
+		//i=i/4;
+		
+		System.out.println(" out put is :"+i);
+		
+		int a[]=new int[6];
+		
+		//a[7]=8;
+		
+		int b[]=null;
+		b[4]=8;
+		
+		}
+		
+		//java 1.7 and above
+		/*catch(ArithmeticException | ArrayIndexOutOfBoundsException  e) {
+			//e.printStackTrace();//error print
+			System.out.println("can not devide by zero ");
+		}*/
+		
+		catch(ArithmeticException   e) {
+			//e.printStackTrace();//error print
+			System.out.println("can not devide by zero ");
+		}
+		catch(ArrayIndexOutOfBoundsException  e) {
+			//e.printStackTrace();//error print
+			System.out.println("out of limit ");
+		}
+		catch(Exception  e) {
+			//e.printStackTrace();//error print
+			System.out.println("something wrong ... ");
+		}
+		
+		
+		finally {
+			System.out.println(" finally alwayes execute");
+		}
+		
+	// new example
+		
+		int n=0;
+		System.out.println("Enter a number");
+		
+	
+	}
+
+}

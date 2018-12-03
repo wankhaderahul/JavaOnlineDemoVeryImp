@@ -1,0 +1,6 @@
+
+public class C6_UserDefineException_24 extends Exception {
+
+	
+
+}

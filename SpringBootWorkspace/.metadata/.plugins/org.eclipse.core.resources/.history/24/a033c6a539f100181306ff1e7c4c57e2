@@ -1,0 +1,13 @@
+package com.prototype;
+
+public class PrototypeMain {
+	
+	public static void main(String[] args) {
+		
+		BookShop b=new BookShop();
+		b.setbShopName("Novelty");
+		b.loadBooks();
+		System.out.println(b);
+	}
+
+}

@@ -1,0 +1,45 @@
+package com.composite;
+
+import java.util.ArrayList;
+import java.util.List;
+
+//obj structure of tree
+interface Copmonent{
+	void showPrice();
+}
+
+class Leaf implements Copmonent {
+	
+ private String name;
+ private int price;
+ 
+public Leaf(String name, int price) {
+	super();
+	this.name = name;
+	this.price = price;
+}
+
+@Override
+public void showPrice() {
+	System.out.println(name+" : "+price);
+	
+}
+ 
+ 
+}
+
+public class ComputerPart {
+	
+	String name;
+
+	public ComputerPart(String name) {
+		super();
+		this.name = name;
+	}
+	
+	
+	List<Copmonent> components=new ArrayList<>();
+	
+	public addComponent();
+
+}

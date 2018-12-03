@@ -1,0 +1,10 @@
+import java.util.LinkedList;
+
+public class Node {
+	
+	int data; //data type
+	Node next; // reference of next node
+	
+	
+
+}

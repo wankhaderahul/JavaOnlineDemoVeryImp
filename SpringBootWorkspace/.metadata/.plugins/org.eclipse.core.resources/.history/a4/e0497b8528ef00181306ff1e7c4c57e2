@@ -1,0 +1,21 @@
+package com.prototype;
+
+public class PrototypeMain {
+
+	public static void main(String[] args) throws CloneNotSupportedException {
+		BookShop bs=new BookShop();
+		bs.setShopName("Novelty");
+		bs.loadDataDBEx();
+		System.out.println(bs);
+		
+		/*BookShop bs1=new BookShop();
+		bs1.setShopName("A1");
+		bs1.loadDataDBEx(); // it will heat DB performance is decrease
+		System.out.println(bs1);*/
+
+		BookShop bs1=(BookShop) bs.clone();
+		bs1.setShopName("A1");
+		System.out.println(bs1); // it will give u same obj
+	}
+
+}

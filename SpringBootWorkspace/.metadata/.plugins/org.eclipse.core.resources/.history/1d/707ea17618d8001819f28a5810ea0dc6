@@ -1,0 +1,150 @@
+package com.rahul.demo;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.QueryParam;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class AlienResource {
+    
+	@Autowired
+	AlienRepo repo;
+	
+	@GetMapping(path="aliens",produces="application/json")
+	public List<Alien> getAliens(){
+		
+		List<Alien> aliens=new ArrayList<>();
+		aliens=	repo.findAll();
+		return aliens;
+	}
+	
+	@GetMapping(path="aliens/{id}",produces="application/json")
+	public Optional<Alien> getAlien(@PathVariable("id") int id){
+		
+		return repo.findById(id);
+	}
+	
+	@PostMapping(path="/aliens",consumes="application/json")
+	public Alien addAlien(@RequestBody Alien a){
+		
+		repo.save(a);
+		
+		return a;
+	}
+	
+	@PutMapping(path="/aliens",consumes="application/json")
+	public Alien updateAlien(@RequestBody Alien a){
+		
+		repo.save(a);
+		
+		return a;
+	}
+	
+	@DeleteMapping(path="/aliens/{id}")
+	public String deleteAlienById(@PathVariable int  id){
+		
+		Alien a=repo.getOne(id);
+		
+		repo.delete(a);
+		
+		return "deleted";
+	}
+	
+	//practice
+	
+	@DeleteMapping(path="/aliens")
+	public String deleteAlienUsingQueryParam(@QueryParam("id") int  id,@QueryParam("name") String  name){
+		//url:- http://localhost:8080/aliens?id=106&name=rupali
+		Alien a=repo.getOne(id);
+		List<Alien> a1=repo.findByName(name);
+		System.out.println(a1.size());
+		
+		repo.delete(a);
+		
+		return "deleted";
+	}
+	
+	//delete list of parameter
+	@DeleteMapping(path="/aliens/id")
+	public String deleteAlienBySeletedId(@RequestBody AlienDTO alien){
+		//url:- {"alienList":[105,106]}
+
+		alien.alienList.stream().forEach((i)->{
+			
+			Alien a1=repo.getOne(i);
+			repo.delete(a1);
+			
+			
+		});
+		
+		return "deleted";
+	}
+	
+	//delete list of parameter using DTO
+	@PostMapping(path="/aliens/delete",consumes="application/json")
+	public String deleted (@RequestBody AlienDTO alien){
+		
+		//url:- {"alienList":[105,106]}
+
+		alien.alienList.stream().forEach((i)->{
+			
+			Alien a1=repo.getOne(i);
+			repo.delete(a1);
+			
+			
+		});
+		
+		return "deleted";
+	}
+	
+	
+	@GetMapping(path="/aliens/pathverble/{id}/{name}",produces="application/json")
+	public List<Alien> getAlienUsingPathVariable(@PathVariable int id, @PathVariable String name){
+		//url:- http://localhost:8080/aliens/pathverble/101/pranali
+		Alien a1=repo.getOne(id);
+		
+		List<Alien> aliens=repo.findByName(name);
+		System.out.println(a1.getId());
+		aliens.stream().forEach(i->System.out.println(i.getName()));
+		return  aliens ;
+		
+	}
+	
+	@GetMapping(path="/aliens/queryparam",produces="application/json")
+	public List<Alien> getAlienUsingQueryParam(@QueryParam("id") int id,@QueryParam("name") String name){
+		//url:- http://localhost:8080/aliens/queryparam?id=101&name=pranali
+		Alien a1=repo.getOne(id);
+		
+		List<Alien> aliens=repo.findByName(name);
+		System.out.println(a1.getId());
+		aliens.stream().forEach(i->System.out.println(i.getName()));
+		return  aliens ;
+		
+	}
+	
+	@GetMapping(path="/aliens/queryandpathparam/{id}",produces="application/json")
+	public List<Alien> getAlienUsingQueryandPathParam(@PathParam("id") int id, @QueryParam("name") String name){
+		//url:- http://localhost:8080/aliens/queryandpathparam/101?name=pranali
+		Alien a1=repo.getOne(id);
+		
+		List<Alien> aliens=repo.findByName(name);
+		System.out.println(a1.getId());
+		aliens.stream().forEach(i->System.out.println(i.getName()));
+		return  aliens ;
+		
+	}
+	
+}

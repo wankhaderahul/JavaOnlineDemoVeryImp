@@ -1,0 +1,97 @@
+https://linuxize.com/post/install-java-on-centos-7/
+
+http://rahuldemoapp.azzj6cdjsd.us-east-1.elasticbeanstalk.com/
+
+https://www.tecmint.com/install-apache-tomcat-in-centos/
+
+https://www.cyberciti.biz/faq/yum-install-wget-redhat-cetos-rhel-7/
+
+
+
+Linux  --> Ubhuntu --> apt get command use  --> i.e. apt get update , apt get install java1.8
+           Red Hat,Centos --> yum  command use
+
+ec2-user@34.239.121.57
+data-->ec2-user
+
+sudo yum update -y
+
+///sudo yum install -y httpd24 php56 php56-mysqlnd
+
+sudo yum install -y httpd
+
+service httpd start
+
+
+need jar for aws code start
+HibernateCore   5.2.9.Final
+Spring ORM      4.2.6.RELEASE
+MysqlConnector  5.1.39
+c3p0            0.9.5.2
+Spring Tx       4.2.6.RELEASE
+
+Hibernate Configuration
+SessionFactory -->Hibernate properties -->datasource
+Transactional
+
+
+@Repository
+class AlienDAO
+
+@Autowired
+SessionFactory sf;
+
+Session session=sf.getCurrentSession();
+
+
+
+
+    Access Key ID:
+    AKIAISEMGH76VES5VUQQ
+    Secret Access Key:
+    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
+
+
+	
+db instance-:	youtube.cvicztclv6un.us-east-1.rds.amazonaws.com
+user:- root
+pwd:- rahul1991
+
+v6un.us-east-1.rds.amazonaws.com
+
+
+
+
+DB URL:-youtube.cvicztclv6un.us-east-1.rds.amazonaws.com
+
+
+
+FROM centos
+RUN yum update -y
+RUN yum install java-1.8.0-openjdk
+RUN yum install weget
+
+
+https://git-codecommit.us-east-1.amazonaws.com/v1/repos/rahulAwsFirstDemo
+
+
+
+
+
+ Access Key ID:
+    AKIAISEMGH76VES5VUQQ
+    Secret Access Key:
+    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
+
+
+	
+db instance-:	youtube.cvicztclv6un.us-east-1.rds.amazonaws.com
+user:- root
+pwd:- rahul1991
+
+v6un.us-east-1.rds.amazonaws.com
+
+
+
+
+DB URL:-youtube.cvicztclv6un.us-east-1.rds.amazonaws.com

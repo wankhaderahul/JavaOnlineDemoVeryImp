@@ -1,0 +1,17 @@
+package com.stack;
+
+public class Stack {
+	
+	public void push(int data) {
+	int stack[]=new int[5];
+	int top=0;
+	stack[top]=data;
+	top++;
+	//System.out.println(top);
+	}
+	
+	public void peak() {
+		
+	}
+
+}

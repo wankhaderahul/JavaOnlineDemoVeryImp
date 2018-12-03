@@ -1,0 +1,25 @@
+package com.composite;
+
+
+interface Component{
+	
+	void showPrice();
+}
+
+
+class Cabinet{
+	
+	String name;
+	int price;
+	public Cabinet(String name, int price) {
+		super();
+		this.name = name;
+		this.price = price;
+	}
+	
+	
+}
+
+public class ComputerPart {
+
+}

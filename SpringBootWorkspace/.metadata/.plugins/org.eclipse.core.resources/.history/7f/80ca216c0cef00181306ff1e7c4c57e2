@@ -1,0 +1,27 @@
+package com.phone;
+
+public class PhoneBuilder {
+
+	private String os;
+	private int ram;
+	private String processor;
+	private double screeSize;
+	private int battery;
+	public void setOs(String os) {
+		this.os = os;
+	}
+	public void setRam(int ram) {
+		this.ram = ram;
+	}
+	public void setProcessor(String processor) {
+		this.processor = processor;
+	}
+	public void setScreeSize(double screeSize) {
+		this.screeSize = screeSize;
+	}
+	public void setBattery(int battery) {
+		this.battery = battery;
+	}
+	
+	
+}

@@ -1,0 +1,20 @@
+package com.stack;
+
+public class Runner {
+	
+	public static void main(String[] args) {
+		Stack s=new Stack();
+		s.push(15);
+		s.push(8);
+		s.push(10);
+		
+		System.out.println("deleted : "+s.pop());
+		
+		s.peak();
+		System.out.println("size is : "+ s.size());
+		System.out.println(s.isEmpty());
+	
+		
+	}
+
+}

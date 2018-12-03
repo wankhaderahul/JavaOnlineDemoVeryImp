@@ -1,0 +1,29 @@
+
+public class C4_ExceptionDemo_22 {
+
+	public static void main(String[] args) {
+		
+		try {
+		int i=7;
+		i=i/4;
+		
+		System.out.println(" out put is :"+i);
+		
+		int a[]=new int[6];
+		//a[5]=7;
+		a[7]=8;
+		
+		}
+		
+		catch(ArithmeticException | ArrayIndexOutOfBoundsException  e) {
+			//e.printStackTrace();//error print
+			System.out.println("Error ");
+		}
+		
+		
+		finally {
+			System.out.println(" finally alwayes execute");
+		}
+	}
+
+}

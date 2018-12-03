@@ -1,0 +1,7 @@
+package com.composite;
+//obj structure of tree
+interface 
+
+public class ComputerPart {
+
+}

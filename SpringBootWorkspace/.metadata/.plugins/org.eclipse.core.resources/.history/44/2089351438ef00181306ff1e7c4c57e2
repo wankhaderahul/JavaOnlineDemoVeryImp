@@ -1,0 +1,25 @@
+package com.composite;
+//obj structure of tree
+interface Copmonent{
+	void showPrice();
+}
+
+class Leaf implements Copmonent {
+	
+ private String name;
+ private int price;
+ 
+public Leaf(String name, int price) {
+	super();
+	this.name = name;
+	this.price = price;
+}
+ 
+ 
+}
+
+public class ComputerPart {
+	
+	
+
+}

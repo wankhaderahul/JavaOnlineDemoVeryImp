@@ -1,0 +1,10 @@
+package com.factory;
+
+public class Factory {
+	
+	public OSInterface getInstance(String str) {
+		
+		if()
+	}
+
+}

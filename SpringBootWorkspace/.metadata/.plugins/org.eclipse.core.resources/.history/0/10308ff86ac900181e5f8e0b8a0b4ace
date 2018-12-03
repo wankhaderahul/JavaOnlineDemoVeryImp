@@ -1,0 +1,14 @@
+
+public class C5_ExceptionUserDefineDemo_23 {
+
+	public static void main(String[] args) {
+		int i,j;
+		i=8;
+		j=0;
+		
+		int k=i/j;
+				
+				
+	}
+
+}

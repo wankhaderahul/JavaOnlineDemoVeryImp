@@ -1,0 +1,13 @@
+
+public class LinkedList {
+
+	
+	Node head;
+	
+	public void add(int data) {
+		
+		Node node=new Node();
+		node.data=data;
+		node.next=null;
+	}
+}

@@ -1,0 +1,9 @@
+package com.adapter;
+
+public class AssignmentWriter {
+	
+	public void assigmnetWrite(String str) {
+		
+	}
+
+}

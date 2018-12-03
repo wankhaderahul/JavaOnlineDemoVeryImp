@@ -1,0 +1,25 @@
+package com.factory;
+
+// define Interface for creating obj subclass declare which class instantiate
+public class Factory implements OSInterface {
+	
+	public OSInterface getInstance(String str) {
+		
+		if(str.equals("Android")) {
+			return new AndroidClass();
+		}
+		else if(str.equals("IOS")) {
+			return new IOSClass();
+		}
+		else {
+			return new MicroSoftClass();
+		}
+	}
+
+	@Override
+	public void spec() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

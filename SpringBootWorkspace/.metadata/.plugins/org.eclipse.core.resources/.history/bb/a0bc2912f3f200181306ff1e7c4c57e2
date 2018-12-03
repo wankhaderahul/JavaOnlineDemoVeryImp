@@ -1,0 +1,54 @@
+class EngineSpecs{
+	
+	
+	
+}
+
+class Engine {
+	
+	public Engine(EngineSpecs specs) {
+		
+	}
+	
+	public void work() {
+		System.out.println(" Engine Movie");
+	}
+}
+
+
+//Composition -> Strong Has-A relationship 
+
+final class Car {
+
+	  private final Engine engine;
+
+	  Car(EngineSpecs specs) {
+	    engine = new Engine(specs);
+	  }
+
+	  void move() {
+	    engine.work();
+	  }
+	}
+
+final class Cars {
+
+	  private Engine engine;
+
+	  void setEngine(Engine engine) {
+	    this.engine = engine;
+	  }
+
+	  void move() {
+	    if (engine != null)
+	      engine.work();
+	  }
+	}
+
+public class E5_AggrigationAndCompositionDemo_41 {
+	
+	EngineSpecs specs=new EngineSpecs();
+	Car c=new Car(specs);
+	c.move();
+
+}

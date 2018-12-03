@@ -1,0 +1,10 @@
+package mobilephone;
+
+public class OperatingSystemFactory {
+	
+	public OSInterface getInstance(String str) {
+		
+		
+	}
+
+}

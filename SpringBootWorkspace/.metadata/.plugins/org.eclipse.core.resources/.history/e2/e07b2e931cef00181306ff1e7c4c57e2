@@ -1,0 +1,18 @@
+package com.composite;
+
+
+interface Component{
+	
+	void showPrice();
+}
+
+
+class Cabinet{
+	
+	String name;
+	int price;
+}
+
+public class ComputerPart {
+
+}

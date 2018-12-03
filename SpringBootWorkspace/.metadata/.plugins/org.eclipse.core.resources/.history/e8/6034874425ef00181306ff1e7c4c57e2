@@ -1,0 +1,7 @@
+package com.prototype;
+
+public class BoolShop {
+	
+	private String shopName;
+
+}

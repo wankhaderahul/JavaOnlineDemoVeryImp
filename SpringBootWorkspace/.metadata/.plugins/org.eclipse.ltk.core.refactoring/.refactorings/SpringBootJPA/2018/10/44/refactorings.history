@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ServletInitializer.java&apos; to &apos;bootjpa/src/main/java/com.rahul.demo&apos;&#x0D;&#x0A;- Original project: &apos;SpringBootJPA&apos;&#x0D;&#x0A;- Destination element: &apos;bootjpa/src/main/java/com.rahul.demo&apos;&#x0D;&#x0A;- Original element: &apos;com.rahul.demo.ServletInitializer.java&apos;" description="Copy compilation unit" destination="=bootjpa/src\/main\/java&lt;com.rahul.demo" element1="/src\/main\/java&lt;com.rahul.demo{ServletInitializer.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1540960358428" units="1" version="1.0"/>
+</session>

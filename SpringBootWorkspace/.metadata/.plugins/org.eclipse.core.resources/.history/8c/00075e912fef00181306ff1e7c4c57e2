@@ -1,0 +1,15 @@
+package com.factory;
+
+public class Factory {
+	
+	public OSInterface getInstance(String str) {
+		
+		if(str.equals("Android")) {
+			return new AndroidClass();
+		}
+		else if(str.equals("Android")) {
+			
+		}
+	}
+
+}

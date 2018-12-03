@@ -1,0 +1,12 @@
+package com.prototype;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class BoolShop {
+	
+	private String shopName;
+	
+	List<Book> books=new ArrayList<>();
+
+}

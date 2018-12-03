@@ -1,0 +1,18 @@
+package mobilephone;
+
+public class OperatingSystemFactory {
+	
+	public OSInterface getInstance(String str) {
+		
+		if(str.equals("Android")) {
+			return new AndroidClass();
+		}
+		else if(str.equals("IOS")) {
+			return new IOSClass();
+		}
+		else {
+			return new MicrosoftClass();
+		}
+	}
+
+}

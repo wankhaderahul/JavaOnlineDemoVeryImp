@@ -1,0 +1,34 @@
+
+class Engine {
+	
+	public Engine(EngineSpecs specs) {
+		
+	}
+	
+	public void work() {
+		System.out.println(" Engine Movie");
+	}
+}
+
+class EngineSpecs{
+	
+	
+	
+}
+
+final class Car {
+
+	  private final Engine engine;
+
+	  Car(EngineSpecs specs) {
+	    engine = new Engine(specs);
+	  }
+
+	  void move() {
+	    engine.work();
+	  }
+	}
+
+public class E5_AggrigationAndCompositionDemo_41 {
+
+}

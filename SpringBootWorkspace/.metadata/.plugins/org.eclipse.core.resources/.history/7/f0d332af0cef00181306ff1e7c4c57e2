@@ -1,0 +1,10 @@
+package com.phone;
+
+public class BuilderMain {
+public static void main(String[] args) {
+	
+	
+	Phone ph=new PhoneBuilder().setOs("Android").setRam(2).getPhone();
+}
+	
+}

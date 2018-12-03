@@ -1,0 +1,5 @@
+#Tomcat publish data
+#Wed Nov 14 14:47:07 IST 2018
+org.eclipse.jst.j2ee.server\:SpringMVCGitaramDemo=D\:\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\SpringMVCGitaramDemo
+org.eclipse.jst.j2ee.server\:/binary\:C\:\\Users\\fwin01617\\.m2\\repository\\org\\springframework\\spring-web\\4.1.8.RELEASE\\spring-web-4.1.8.RELEASE.jar=D\:\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\SpringMVCGitaramDemo\\WEB-INF\\lib\\spring-web-4.1.8.RELEASE.jar
+org.eclipse.jst.jee.server\:rahulawsfirstde=D\:\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\rahulawsfirstde

@@ -1,0 +1,10 @@
+package com.singleton;
+
+class ABC{
+	
+	static ABC obj=new ABC(); //static obj of this class
+}
+
+public class SingletonMain {
+
+}
