@@ -200,6 +200,7 @@ Map I --> HashMap C --> HashTable C --> TreeMap C --> SortedMap C
 		Treminate -->
 		  a)findFirst()
 		  b)forEach()
+		  c)sorted -->map.entrySet().stream().sorted(Map.Entry.comparingByKey());
 		
 		list.Stream().forechc(i->syso(i));
 		list.parallelStream().forechc(i->syso(i));//Unorder -->Multithread use parallelStream() method
@@ -243,7 +244,7 @@ Map I --> HashMap C --> HashTable C --> TreeMap C --> SortedMap C
       AWS Credential
 
     user:- rahulwankhade92@gmail.com
-    pwd:-Rahul@1991
+    pwd:-Rahul@1992
 			
 			
 				Git -->Distrubuted version control system -->Trunk based development
@@ -275,6 +276,8 @@ git checkout --track origin/<BRANCH-NAME>
 git init
 
 git remote add origin https://github.com/wankhaderahul/JavaOnlineDemoVeryImp.git
+
+git add .
 
 git commit -m "first commit"
 
@@ -366,7 +369,7 @@ select sum(rollno) from student;
 
 -- gropu by ---- unique records
 
-employ and dept table BD name-> jpademo
+employ and dept table DB name-> jpademo
 select * from employ
 
 select * from dept
@@ -536,6 +539,8 @@ select designation from employ where deptno in(select deptno from dept where loc
 
 select max(sal) from employ
 
+select sal from employ GROUP BY sal order sal by sal desc limit 1;
+
 select ename from employ where sal=40000
 
 select ename from employ where sal=(select max(sal) from employ);
@@ -546,10 +551,22 @@ select eno,ename from employ where designation='manager' and sal =(select max(sa
 
 select sal from employ where sal=(select max(sal) from employ where sal <(select max(sal) from employ));
 
+select sal from employ GROUP BY sal order by sal desc limit 1,1;
+
+
+
+-- thired highest salary --> just change the limit first -> 1, secound -> 1,1 ,thired -> 2,1, fourth -> 3,1 and so on
+
+select sal from employ order by sal desc limit 2,1;
+
+
+-- furth highest salary
+
+select sal from employ order by sal desc limit 3,1;
+
 -- location does employ aaa work
 
 select location from dept where deptno=(select deptno from employ where ename='aaa');
-
 
 -- list employ along with there location
 
@@ -954,6 +971,568 @@ v6un.us-east-1.rds.amazonaws.com
 
 DB URL:-youtube.cvicztclv6un.us-east-1.rds.amazonaws.com
 
+
+
+---------------------------------------------------------------------------------
+spring boot 
+
+
+Spring boot --> Pre-configure set of framework/technologies --> production ready application
+
+Spring mvc -->DI Framework
+
+               Spring                                                SpringBoot(java 8, mvn version 3.0 or above)
+ 
+ 1)DI FrameWork                                        1) Pre-Configured set of Framework
+ 
+ 2)Managed Lifecyle by JAVA                            2)no need worry about configuration a data source
+
+ 3) Take time to run application                       3) Shortest way to run application
+ 
+ 
+--> Step to create SpringBoot Application
+ 
+ 1)add spring boot starter parent
+ 2)add spring boot web mvc
+ 3)configure java8 version
+ 4)add spring boot mvn plugin
+ 5)create SB application launcher
+ 
+ 
+ --> Other Starter Project
+ 
+ 1)SB starter web services
+ 2)SB starter test
+ 3)SB starter jdbc
+ 4)SB starter security
+ 5)SB datajpa
+ 6)SB datarest
+ 
+ 
+ --> Spring Boot Microservices  
+ 
+ url: https://www.edureka.co/microservices-architecture-training
+ 
+ https://www.youtube.com/watch?v=o6Rt0SMSI08
+ 
+ First of all, there is no single way design micro-service , one has to choose according to the use case and project requirement. 
+ 
+ Before Microservices Monolethic Architecture  --> big container, all software companies of application assemble together and tightly coupled, single instance.
+ 
+ Http Request --> Server side application --> DB --> client side UI
+ 
+ Disadvantages of Monolethic Architecture --> large and complex application , slow development , block continue deployment , unsclable(memory,load), Unreliable (tightly coupled), Inflexible (difficult to add new framework)
+ 
+ why microservices ?
+ Ans: -
+ 
+ What is Microservices Architecture ?
+ Ans:- It is Architectureal style structure COLLECTION OF SMALL AUTONOMOUS SERVICES model around the BUSINESS DOMAIN
+       each service SELF-CONTAINT and implemented SINGLE BUSINESS CAPABILITY
+	   each microservice seprate data module and interact each other to multiple instances
+ 
+ ex:- Ecommerce application ->  client browser -> UI microservices --> customer MS --> product MS --> cart MS (totaly dependent & losely coupled) 
+ 
+ Features of Microservices --> 
+ 1. small focused --> simplicity
+ 2. loosely coupled --> each service independent (development & deployment real quick)
+ 3. language nutral (one is python and other is java) 
+ 4. bounded context (no need implementation of other services)
+ 
+ Advantages of Microservices --> 
+ 1. independent development
+ 2. mix technologies stack
+ 3. fault isolation (if any service is break down not affected the other services)
+ 4. granual scalling
+ 
+ ex:- Dignisis MS , Pataient MS ,Doctor MS --> Ecommerce - Order MS , Product MS , Consumer MS
+ 
+ Challanges of Microservices -->
+ 
+ 1. perceptibility
+ 2. configuration management
+ 3. debugging
+ 4. consistency
+ 5. automatic components
+ 
+ solution of cahllanges in microservice use SB -->
+ 1. embeded server easy to deploy
+ 2. help to monitor multiple components
+ 3. help configure coponents externally
+ 
+ create Microservices using SB
+ 
+ EurekaServer -->spring starter project --> Dependency - eureka server  --> 
+                 application properties (server.port=8761 , eureka.client.register-with-eureka=false)
+                 EurekaServerApplication class add annotation @EnableEurekaServer , package com.eureka.microservice 
+			
+ Item-Catelog --> spring starter project --> Dependency - Actuator (help & monitor Application) ,Eureka Discovery ,JPA , H2(Immemory DB),Rest Repository ,Web(nothing but Spring MVC embeded tomcat), Devtool (auto reload), Lombok (boiler plate code)	
+ 
+                 Item-CatelogApplication class add annotation @EnableDiscoveryClient  
+				 
+				 @Data
+				 @AllArgsConstructor // genrate constuctor all parameter
+				 @NoArgsConstructor // genrate default constructor 
+				 @ToString
+				 @Entity
+				 class Item{
+				 
+				 public Item(String name){ //parameteries constructor
+				 this.name=name;
+				 }
+				 
+				 @Id
+				 @GeneratedValue
+				 private Long id;
+				 private String name;
+				 }
+				 
+				 @RepositoryRestResource
+				 interface ItemRepository extends JpaRepository<Item,Long>{}
+				 
+				 @Component
+				 class ItemInitializer implements CommandLineRunner{
+				 private final ItemRepository itemRepository;
+				 
+				 ItemInitializer(ItemRepository itemRepository){
+				   this.itemRepository=itemRepository;
+				 }
+				 
+				 public void run(String ...args) throws Exception{
+				 
+				 Stream.of("Liming","Puma","Nike").forEach(item ->itemRepository.save(new Item(item)));
+				 itemRepository.findAll().forEach(System.out::println);
+				 
+				 }
+				 
+				 }
+				 }
+				 
+application.properties -->server.port=8080 ,spring.application.name=item-catalog-service
+
+applicaion-cloud.properties
+
+eureka.instance.hostname=${vcpa.appliaction.uris[0]:localhost}
+eureka.instance.notSecurePort=80
+eureka.instance.metadataMap.instanceId=${vcpa.appliaction.instance-id:${spring.application}}
+eureka.instance.leaseRenewalIntervalInSeconds=5
+
+eureka.client.region=default
+eureka.client.registoryFetchIntervalInSeconds=5
+eureka.client.serviceUrl.defaultZone=${vcpa.services.pwa-eureka-service.credential.url}/{}
+
+
+
+Edge-service --> Dependency - Eureka Discovery , feign (declarative web service client) ,zuul(clouding system) , Rest Repositories , web ,hystrix (circuit breaker with spring cloud) ,Lombok (reduce boiler plate code)
+
+
+application.properties --> server.port=8090 ,spring.application.name=item-catalog-service
+
+
+applicaion-cloud.properties
+
+eureka.instance.hostname=${vcpa.appliaction.uris[0]:localhost}
+eureka.instance.notSecurePort=80
+eureka.instance.metadataMap.instanceId=${vcpa.appliaction.instance-id:${spring.application}}
+eureka.instance.leaseRenewalIntervalInSeconds=5
+
+eureka.client.region=default
+eureka.client.registoryFetchIntervalInSeconds=5
+eureka.client.serviceUrl.defaultZone=${vcpa.services.pwa-eureka-service.credential.url}/{}
+
+
+@EnableFeignClients
+@EnableCircuitBreaker
+@EnableDiscoveryClient
+@EnableZuulProxy
+@SpringBootApplication
+class EdgeServiceApplication{
+
+
+}
+
+@Data
+class Item{
+
+private String name;
+
+//setter getter & toString method
+
+}
+
+@FeignClient("item-catalog-service")
+interface ItemClient{
+
+@GetMapping("/items")
+Resources<Item> readitems();
+}
+
+
+@RestController
+class GoodItemApiAdapterRestController{
+
+private final ItemClient itemClient;
+
+public GoodItemApiAdapterRestController(ItemClient itemClient){
+this.itemClient=itemClient;
+}
+
+public Collection<Item> fallback(){
+return new ArrayList<>();
+}
+
+@MystrixCommand(fallback="fallback")
+@GetMapping("/top-brands")
+@CrossOrigin(origin="*")
+public Collection<Item>goodItem(){
+
+return itemClient.readitems().getContent().stream().filter(this::isGreat).collect(Collector.toList());
+}
+
+private boolean isGreat(Item item){
+
+return !item.getName().equal("Nike") && !item.getName().equal("Puma") && !item.getName().equal("Reebok");
+
+}
+}
+
+ ------------------------------------------------------------------------
+ 
+ Jenkins 
+ 
+ Jenkins:-  Jenkins is java appliaction (https://www.youtube.com/watch?v=ooA8RS3hC6k)
+ 
+ --> use for CI (continious intregration )/ CD (continious delivery)
+ 
+ Step for jenkins
+ 
+ step 1:- download jenkins war file
+ setp 2:- place into location at your system
+ step 3:- goto comd(windows)/terminal(mac)
+      
+	     -> goto folder where is jenkins war
+		 -> java -jar jenkins.war   (run jenkins on local system)
+		 
+		    signin:- if you aking for signup credential goto configure.xml file and change useSecurity=false i.e.  <useSecurity>false</useSecurity>
+		 
+		 <admin passoword> first time use jenkins
+		 
+ step 4:- goto browser http://localhost:8080
+ step 5:- installed required plugins
  
  
  
+ --> How to setup jenkins on Tomcat
+ 
+ why ? Running jenkins standalone(jetty/winstone) vs running jenkins on tomcat
+ 
+    --> tomcat 5 or above
+	--> java 7 or 8 above should be availble
+	
+	step 1:- copy jenkins.war file tomcat webapp folder
+	step 2:- goto comd(windows)/terminal(mac)
+	        
+			 -> goto tomacat/bin directory
+			 -> make all file executable : chmod+x*.sh
+    step 3:- startup tomcat : startup.sh
+	step 4:- verify tomcat started with jenkins war htp://localhost:8080/jenkins
+	
+	        -> start jenkins (standalone) different port : java -jar jenkins.war --httpPort=9090
+			
+			
+ --> hoe to move your home directory c: user to other directory because need lost of space
+ 
+ step 1: -check your current directory (C:\Users\fwin01617\.jenkins)
+ step 2:- create new folder for jenkins home directory  (D:\Jenkins\jenkinshome)
+ step 3:- copy all data from old directory to new directory
+ step 4:- change environment veriable JENKINS_HOME and set new dir 
+          
+		  windows -> change env veriable JENKINS_HOME-/D:Jenkins/jenkinshome/ or set JENKINS_HOME-/D:Jenkins/jenkinshome/
+		  mac -> export JENKINS_HOME-/D:Jenkins/jenkinshome/
+ step 5:- restart jenkins (java -jar jenkins.war) or (localhost:8080/restart)
+ 
+          localhost:8080/systemInfo --> all system info see
+		  http://localhost:8080/cli/ -->Available Commands
+		  
+		  
+--> jenkins use for CLI (command line intregartion)
+
+  step 1:- start jenkins -> java -jar jenkins.war or java -jar jenkins.war --httpPort=9090
+  step 2:- goto managed jenkins -> goto global security -> enable global securiry
+  step 3:- goto localhost:8080/cli --> Available Commands
+  step 4:- download jenkins-cli.jar
+	  
+	  
+	  
+	  
+------------------------------------------------------------------------------------------------------------------------
+
+Java QA for Interview
+
+1. Java is pure object oriented or not?
+A:- 
+
+There are lot of arguments around whether Java is purely object oriented or not. 
+Java should be considered as purely object oriented language as it has wrapper classes. 
+So you can use Integer, Float etc. instead of int, float etc. (there are a total of eight primitive types).
+But since Java has those eight primitive types, the critics will say Java is not purely object-oriented.
+
+
+2. what is primary key and unique in sql & composite key & foreign key ?
+A:-
+
+Primary key :- A PRIMARY KEY has a UNIQUE constraint by default.
+               one PRIMARY KEY constraint per table.
+               PRIMARY key not allows NULL 
+			   Clustered Index on primary-key 
+			
+Unique Key:-  UNIQUE key allows only one NULL values.
+              many UNIQUE constraints per table
+              Clustered Index on primary-key if not exists and Non-Clustered Index on Unique-key
+             
+			  
+Composite Key :- composite key is a combination of two or more columns ,uniquely identify each row.
+
+Foreign Key :-  FOREIGN KEY is a key used to link two tables together --> FOREIGN KEY is reference of primary key
+
+Cluster index mysql :- PRIMARY KEY is cluster index --> only one cluster index 
+
+CREATE TABLE Post
+( post_id INT NOT NULL AUTO_INCREMENT
+, user_id INT NOT NULL
+--- other columns
+, CONSTRAINT Post_PK
+    PRIMARY KEY (user_id, post_id)     -- your clustered index
+, CONSTRAINT post_id_UQ
+    UNIQUE (post_id)             -- you still want uniqueness for the `post_id`
+) ENGINE = InnoDB ;
+
+
+
+3. Yml file in spring boot ? or difference between .properties file and .yml file ?
+A:- Spring Boot lets you externalize your configuration so that you can work with the same application code in different environments.
+    You can use properties files, YAML files, environment variables, and command-line arguments to externalize configuration.
+	SnakeYAML file use in spring boot
+	
+	property file use --> internatinalize 
+	.yml file use --> externalize
+	
+
+4. How to configure different data sources for local testing and deployment in Spring Boot Application ?
+A:- Definitely use Spring profiles. --> Profiles help to have different application configuration for different environments.
+     application.properties --> by default file --> spring.profiles.active=prod , spring.profiles.active=dev
+	 application-dev.properties
+	 application-prod.properties
+
+5. java - Rest API default Response (Exception/Error/Default)
+A:-
+Change the default REST response to JSON instead XML
+
+RESTful response how to return JSON instead of XML ...
+
+rest - 'Best' practice for restful POST response
+
+
+6. how the session maintain in rest web service ?
+
+A:- 1. Create a POST request.
+a. Point the POST request to base-uri/session.
+b. Set the Accept header to application/json or application/xml.
+c. Set the Content-Type header to application/json.
+Note: The only content type accepted for creating a REST API session is JSON.
+d. Populate the request body with a JSON object named session containing username and password and passing a valid user name and password.
+{
+"session" : {
+    "username" : "julia",
+    "password" : "birdwatcher25"
+  }
+}
+
+7. Rest Header and parameter ?
+
+A:-  more than one "Content-Type" , request headers and response headers, 
+	    Request and Response Body
+	    Request Authorization
+	    Response Caching 
+	    Response Cookies
+	Most of these headers are for management of connections between client, server and proxies
+	
+	@Post
+    //@Get
+    @Path("query")
+    public Response queryHeaderInfo(@Context HttpHeaders httpHeaders){
+         
+        /** how to get specific header info? **/
+        String cacheControl = httpHeaders.getRequestHeader("Cache-Control").get(0);
+        System.out.println("Cache-Control: "+cacheControl);
+        /** get list of all header parameters from request **/
+        Set<String> headerKeys = httpHeaders.getRequestHeaders().keySet();
+        for(String header:headerKeys){
+            System.out.println(header+":"+httpHeaders.getRequestHeader(header).get(0));
+        }
+        
+     
+        return Response.status(200).entity("successfully queried header info").build();
+    } 
+	
+	/*o/p on console
+	
+	 * Cache-Control: no-cache
+       content-type:application/json
+       accept:application/json
+       id:
+       cache-control:no-cache
+       postman-token:a15ee50d-0752-468a-a902-0110cb641d83
+       user-agent:PostmanRuntime/7.3.0
+       host:localhost:8080
+       cookie:JSESSIONID=3E8E4FBCF052C14E5DA5808B85AA6F9B; Cookie_1=value
+       accept-encoding:gzip, deflate
+       connection:keep-alive
+	 * 
+	 * o/p on json --> successfully queried header info status --> 200 OK
+	  */
+	  
+	  
+	  
+8. Rest Response or status  Code ?
+A:- -->  Status code Rest -->https://restfulapi.net/http-status-codes/
+	 2xx Success. ... 200 (OK) -->201 (Created) -->202 (Accepted) -->204 (No Content) -->
+     3xx Redirection. 301 (Moved Permanently) --> 302 (Found) --> 303 (See Other) --> 304 (Not Modified) --> 307 (Temporary Redirect)
+     4xx Client Error.400 (Bad Request) --> 401 (Unauthorized) -->403 (Forbidden) --> 404 (Not Found) --> 405 (Method Not Allowed) -->406 (Not Acceptable)-->412 (Precondition Failed)-->415 (Unsupported Media Type)
+     5xx Server Error.500 (Internal Server Error) --> 501 (Not Implemented)
+	 * 
+	*/
+	
+	
+	
+
+9. Difference between session and cookies in java ?
+A:-The main difference between a session and a cookie is that session data is stored on the server, 
+whereas cookies store data in the visitor's browser. 
+Sessions are more secure than cookies as it is stored in server.Cookie can be turn off from browser.
+
+
+10. What is interceptor in spring ?
+A:- Interceptor. Spring Interceptors are similar to Servlet Filters but 
+they acts in Spring Context so are many powerful to manage HTTP Request and Response but they
+ can implement more sofisticated behaviour because can access to all Spring context.
+ 
+ 
+11. How to autheticate rest web service.
+
+A:- TWO way 1) Basic authentication & Token Base
+
+
+
+
+
+
+-------------------------------------------------------------------------
+Java 9
+
+New Project Jigsaw in java 9 -- project start 2008 actually start working 2014
+
+Jigsaw concept of mudularity 
+
+rt.jar --> run time jar provide default class String, java.lang.package, System etc
+
+new Features REPL - -> READ,EVAL,PRINT,LOOP --> called as interactive concern
+
+Jshell ->
+
+Interface private method implementation
+
+
+
+
+---------------------------------------------------------------------------------
+BlockChain 
+
+BlockChain is use for bitcoin for centrlize currency changer --> it is centrlized DB as every data secured because is store as hashing key format if you small change key will be change thats reason blockchain is secured.
+
+Blockchain use for exchange money for centrilzed place and is scrured(use for cryptography and distributed computing).
+
+BlockChain is same like that LinkedList one block or node pointed to other block.
+
+Q. Why BlockChian ?
+A:- Money example any bank charge for transaction transfer the money. --> time there is certain time for complete transaction(blockchian provide dcentrlize application don't want between or central server)
+    Immutable & trust
+	
+Q. who is use BlockChain ?
+A:- Advisor(business idea),Developer, Expert.
+
+Q.Prerequities of BlockChain ?
+A:-cryptography , distributed computing  & gameing theorey.
+
+
+Block chain work on peer to peer network, multiple node communicate to each other don't need central server.
+Ex:- napster ,Torrent
+
+4 big concern of Blockchain --> Confidentiality ,Integrity, Non repudiation,Authentication --> to resolve this 4 concern use for cryptography
+
+cryptography --> crypt(hidden/secret)+graphy(write) -> concept of encryption and decryption using kry
+
+* Two types of cryptography --> 1. Symmetric key cryptography , 2. Asymmetric key cryptography
+
+1. Symmetric key cryptography --> as a number of user use the number of different key --> drawback of symmetric number of user increses the number of key will be increses heavy load
+
+2. ASymmetric key cryptography --> public/private key cryptography --> each node use own two different key public/private key -> encrypt msg use for private/public key and dcrypt the msg use for public/private key don't use same key for encryption or dcryption. -> to achive security encrypt msg for public(B) key and dcrypt the msg private(B own) key --. ex A ------> B
+
+
+Digital Signature(use for Authentication) -->ex. A(sender) ---------> B(Receiver) --> A (encrypted using A private key) ( Encrypted using B public key) -> B (dcrypted using B private key) ( dcrypted using A public key) called digital signature
+
+* Node in BlockChain --> Two type of Node 1. Full Node , 2. Partial Node(light node) --> 
+
+ 1.Full Node means computer(all data stored on full node) current size 200GB as on 08-01-2019 --> full node use store the blockchain data, verify the block , Miners (manages transaction and block etc) --> full node(need hudge amout of storage) Miner(need hudge amount of power CUP and JPU power - minner need to invest hudge money)
+ 2.Partial Node --> Bitcoin -> can be use it for wallet purpose (bitcoin mobile application)
+ 
+ 
+ * Hashing in BlockChain. --> Arbitary data(not fixed size data) convert into fixed size data -> SHA (secure hash algoritham) build by NSA (National security agency) --> different version SHA01,SHA02,SHA03,SHA04 (block chain use SHA02(populour 256 and 512) version)
+ 
+*MArkel Tree --> 
+
+
+
+
+------------------------------------------------------------------------------------
+
+Spring Security 
+
+Types of SS --> Basic Auth --> Bearer Token --> O Auth ---> LDAP -->Bcrypt (use in Spting Boot)
+
+SS Provide --> Authentication (who are user user name and passoword) --> Authorization (role of this user)
+
+Bcrypt url:- https://www.google.com/search?client=firefox-b-ab&q=bcrypt
+Bcrypt pwd genrator link :- https://www.browserling.com/tools/bcrypt
+
+
+-------------------------------------------
+5 Steps to improve Programming Skills
+
+1. Algotithm and DataStructure --> Understand first DataStructure and Algorithm of perticular language.
+2. read other code --> Use a GitHub for Improve your coding skills to check other people code and writing skills for same question.
+3. Compititive programming --> Participate in Coding compitition or Online codeing compitition ex: hacker code compitition 
+4. Explore Other language --> it help full for improve your language skills
+5. Build Project
+
+
+------------------------------------------------
+
+Juint 
+
+Q. What is Junit And why Mockito ?
+
+Unit --> Class(Structure) and Method(Behaviour) --> Junit Means unit testing.
+
+TDD --> Test Driven Development 
+
+Mock Service --> Duplicate of actual service  (big difference of mock, fack & stub service)
+
+Types of Mocking Service --> Jmoc, Easy Mock and mockito (Mockito is easyest way of testing)
+
+
+
+-----------------------------------------------------
+SOAP web services
+
+SOAP --> Jax-ws
